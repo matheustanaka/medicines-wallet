@@ -6,7 +6,7 @@
   "author": "Matheus Tanaka <matheustanakanog@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "npx nodemon --exec babel-node src/index.js"
+    "dev": "npx nodemon --exec babel-node src/index.js -e js,gql"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.8",
