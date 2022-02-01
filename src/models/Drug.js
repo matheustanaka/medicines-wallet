@@ -1,6 +1,6 @@
-import { Mongoose } from "mongoose";
+import mongoose from "mongoose";
 
-const Schema = new Mongoose.Schema({
+const Schema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
@@ -14,10 +14,11 @@ const Schema = new Mongoose.Schema({
         require: true,
     },
     wallet: {
-        type: Mongoose.Schema.Types.ObjectId,
-        ref: 'User',
+        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true,
-    }
+    },
 });
 
-export default Mongoose.model('Drug', Schema);
+export default mongoose.model("Drug", Schema);
