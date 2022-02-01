@@ -1,0 +1,25 @@
+type Drug {
+    _id: ID!
+    name: String!
+    description: String!
+    quantity: String!
+    wallet: User!
+}
+
+input DrugInput {
+    name: String!
+    description: String!
+    quantity: String!
+    wallet: ID!
+}
+
+type Query {
+    drugs: [Drug!]!
+    drug(id: ID!): Drug!
+}
+
+type Mutation {
+    createDrug(data: DrugInput!): Drug!
+    updateDrug(id: ID!, data: DrugInput!): Drug!
+    deleteDrug(id: ID!): Boolean
+}
