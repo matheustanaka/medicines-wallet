@@ -9,8 +9,8 @@ const Schema = new Mongoose.Schema({
         type: String,
         required: true,
     },
-    expirationDate: {
-        type: Date,
+    quantity: {
+        type: String,
         require: true,
     },
     wallet: {
