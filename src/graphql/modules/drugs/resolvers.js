@@ -4,16 +4,16 @@ import User from "../../../models/User";
 //A function that resolves a value for a type Drug
 export default {
   Drug: {
-    wallet: (drug) => User.findById(drug.wallet),
+    wallet: async (drug) => await User.findById(drug.wallet),
   },
   Query: {
-    drugs: () => Drug.find(),
-    drug: (_, { id }) => Drug.findById(id),
+    drugs: async () => await Drug.find(),
+    drug: async (_, { id }) => await Drug.findById(id),
   },
   Mutation: {
-    createDrug: (_, { data }) => Drug.create(data),
-    updateDrug: (_, { id, data }) =>
-    Drug.findByIdAndUpdate(id, data, { new: true }),
+    createDrug: async (_, { data }) => await Drug.create(data),
+    updateDrug: async (_, { id, data }) =>
+    await Drug.findByIdAndUpdate(id, data, { new: true }),
     deleteDrug: async (_, { id }) => !!(await Drug.findByIdAndDelete(id)),
   },
 };
